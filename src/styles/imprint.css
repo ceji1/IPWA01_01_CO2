@@ -1,0 +1,70 @@
+/* Initialzustand für Haupttitel und Seitenbeschreibung. Beide sind zunächst unsichtbar und positioniert für die Animationssequenz. */
+.mainn-title,
+.site-description {
+  opacity: 0; /* Startet unsichtbar */
+  transform: translateY(20px); /* Beginnt 20px unterhalb der endgültigen Position für eine "Slide-In"-Animation */
+  transition: opacity 1s ease, transform 1s ease; /* Sanfte Übergänge für Deckkraft und Transformation */
+  animation: fade 1s; /* Führt die Fade-Animation aus, die die Elemente sichtbar macht und an ihre Position bringt */
+}
+
+/* Zustand nach der Animation, macht Haupttitel und Seitenbeschreibung sichtbar und positioniert sie an der endgültigen Stelle. */
+.mainn-title.fade-in,
+.site-description.fade-in {
+  opacity: 1; /* Voll sichtbar */
+  transform: translateY(0); /* Endgültige Position ohne Verschiebung */
+}
+
+/* Keyframe-Definition für die Fade-Animation */
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stildefinitionen für den Hauptcontainer, einschließlich Größe, Farbe und Schatten für eine hervorgehobene Darstellung. */
+.container {
+  max-width: 800px; /* Beschränkt die Breite für bessere Lesbarkeit */
+  margin: 20px auto; /* Zentriert den Container und fügt vertikalen Abstand hinzu */
+  background-color: #ffffff; /* Weißer Hintergrund für Klarheit */
+  padding: 20px; /* Innenabstand für den Inhalt */
+  border-radius: 8px; /* Abgerundete Ecken für ein modernes Design */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten für Tiefe */
+  transition: box-shadow 0.3s ease; /* Weiche Übergänge für den Schatteneffekt beim Überfahren mit der Maus */
+}
+
+/* Verstärkter Schatteneffekt beim Überfahren des Containers mit der Maus */
+.container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Stil für den Haupttitel mit größerer Schrift, Farbe und einer unteren Grenze für visuelle Trennung. */
+.mainn-title {
+  font-size: 2.5em;
+  border-bottom: 2px solid #007bff; /* Blaue untere Grenze */
+  padding-bottom: 10px; /* Abstand zwischen Text und Grenze */
+  margin-bottom: 20px; /* Abstand zum nächsten Inhaltselement */
+  color: #007bff; /* Blaue Schriftfarbe */
+}
+
+/* Stil für die Seitenbeschreibung zur Verbesserung der Lesbarkeit durch angepasste Zeilenhöhe und Farbe. */
+.site-description {
+  line-height: 1.6;
+  color: #555; /* Dunkelgrau für bessere Lesbarkeit */
+}
+
+/* Stildefinitionen für hervorgehobenen Text. */
+strong {
+  color: #555; /* Konsistente Farbgebung für Betonung */
+}
+
+/* Angepasster Stil für unterstrichenen Text, ohne die Standard-Textdekoration, dafür mit Farbe und Gewicht. */
+u {
+  text-decoration: none; /* Entfernt die Standardunterstreichung */
+  color: #007bff; /* Blaue Farbe für Konsistenz */
+  font-weight: 600; /* Halbfett für bessere Sichtbarkeit */
+}

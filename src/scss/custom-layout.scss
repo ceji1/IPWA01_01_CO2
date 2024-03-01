@@ -1,0 +1,22 @@
+// Basic Bootstrap styles and layout customizations.
+
+@import "../../node_modules/bootstrap/scss/bootstrap"; // Bootstrap main styles.
+
+html {
+  scroll-padding-top: 65px; // Spacing for scrolling to anchors with a fixed header.
+}
+
+.sticky-sidebar {
+  z-index: 900; // Priority for the sidebar to keep it above other elements.
+}
+
+main {
+  margin-bottom: 65px; // Spacing at the bottom to prevent overlap with the footer.
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}

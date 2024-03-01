@@ -1,0 +1,95 @@
+/* Base Styles */
+
+/* Paragraph styles for general text formatting */
+p {
+  line-height: 1.6; /* Adjusts the space between lines for readability */
+  color: #555; /* Sets text color to a medium gray for softer contrast */
+}
+
+/* Component Styles */
+
+/* Styles for a sticky sidebar component */
+.sticky-sidebar {
+  background-color: #fff; /* White background for clarity */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 10px; /* Padding for content spacing */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  margin-bottom: 20px; /* Bottom margin for spacing between components */
+}
+
+/* Layout Styles */
+
+/* Container styles for main content area */
+.container {
+  max-width: 1180px; /* Maximum width for content readability */
+  margin: 20px auto; /* Centers the container with vertical margin */
+  background-color: #ffffff; /* White background for content emphasis */
+  padding: 20px; /* Padding around the content */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover for interaction feedback */
+}
+
+/* Typography Styles */
+
+/* Styles for main titles */
+.mainn-title {
+  font-size: 2.5em; /* Larger font size for title emphasis */
+  border-bottom: 2px solid #007bff; /* Blue bottom border for visual separation */
+  padding-bottom: 10px; /* Bottom padding to space out the text from the border */
+  margin-bottom: 20px; /* Bottom margin to separate from subsequent content */
+  color: #007bff; /* Blue color for brand consistency */
+}
+
+/* Initial animation styles for titles and descriptions */
+.mainn-title,
+.site-description {
+  opacity: 0; /* Start elements as invisible */
+  transform: translateY(20px); /* Start elements 20px lower than their final position */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition for both properties */
+  animation: fade 1s; /* Apply fade animation */
+}
+
+/* Final state styles for animation */
+.mainn-title.fade-in,
+.site-description.fade-in {
+  opacity: 1; /* Make elements fully visible */
+  transform: translateY(0); /* Move elements to their final position */
+}
+
+/* Animation keyframes */
+@keyframes fade {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Additional Typography Styles */
+
+/* Styles for site description for consistency with paragraph text */
+.site-description {
+  line-height: 1.6; /* Same line height as paragraphs for uniformity */
+  color: #555; /* Same text color as paragraphs for consistency */
+}
+
+/* Styles for strong text emphasis */
+strong {
+  color: #555; /* Medium gray color for emphasized text */
+}
+
+/* Styles for custom underline text without the default text decoration */
+u {
+  text-decoration: none; /* Removes the default underline */
+  color: #007bff; /* Blue color for visual emphasis */
+  font-weight: 600; /* Semi-bold font weight for distinction */
+}

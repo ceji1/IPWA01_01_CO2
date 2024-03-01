@@ -1,0 +1,13 @@
+ /* Add a class for the table container */
+ .table-container {
+    overflow-x: auto;
+    margin-bottom: 1rem; /* Add some space at the bottom for better styling */
+  }
+
+  /* Add media query to apply styles only in mobile view */
+  @media (max-width: 767px) {
+    .table-container {
+      overflow-x: scroll; /* Use scroll for better touch support */
+      -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+    }
+  }

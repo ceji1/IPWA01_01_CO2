@@ -1,0 +1,27 @@
+/* Navigation Styles */
+
+/* Styles for the primary navigation bar */
+.navbar1 {
+  background-color: #ffffff; /* Sets a white background for the navbar for a clean look */
+}
+
+/* Adds a shadow effect to the navbar on hover for visual feedback */
+.navbar1:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow creates a subtle depth effect on hover */
+}
+
+/* Navigation Link Styles */
+
+/* Styles for navigation links on hover */
+.nav-link:hover {
+  color: #007bff; /* Changes text color to blue on hover for visual emphasis */
+  font-weight: 600; /* Increases font weight to semi-bold for better visibility */
+}
+
+/* Logo Image Styles */
+
+/* Styles for the logo image within the navbar */
+.logo-img {
+  width: 50px; /* Specific width for the logo to ensure it fits well in the navbar */
+  height: auto; /* Auto height to maintain the aspect ratio of the logo image */
+}

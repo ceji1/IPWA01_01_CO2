@@ -1,0 +1,68 @@
+[
+    {
+      "company": "EcoHug BioBuddies GmbH",
+      "country": "Deutschland",
+      "emission": 5.12
+    },
+    {
+      "company": "FossilFoolery Power Corp",
+      "country": "Deutschland",
+      "emission": 4077.45
+    },
+    {
+      "company": "PixelPuffin Cloud AG",
+      "country": "Deutschland",
+      "emission": 256.78
+    },
+    {
+      "company": "Doughy Delights Bäckerei",
+      "country": "Deutschland",
+      "emission": 1.86
+    },
+    {
+      "company": "BinaryBreeze Tech Inc",
+      "country": "USA",
+      "emission": 512.53
+    },
+    {
+      "company": "SuperSaver Megastores LLC",
+      "country": "USA",
+      "emission": 189.27
+    },
+    {
+      "company": "CryoCoin Miners Oy",
+      "country": "Finnland",
+      "emission": 1345.88
+    },
+    {
+      "company": "H2O Powerhouse Oy",
+      "country": "Finnland",
+      "emission": 22.22
+    },
+    {
+      "company": "MochaMadness BV",
+      "country": "Niederlande",
+      "emission": 187.55
+    },
+    {
+      "company": "GlobalCart Ltd",
+      "country": "Irland",
+      "emission": 299.99
+    },
+    {
+      "company": "VelvetCacao Chocolatiers GmbH",
+      "country": "Schweiz",
+      "emission": 47.11
+    },
+    {
+      "company": "AlpineCheese Co AG",
+      "country": "Schweiz",
+      "emission": 39.33
+    },
+    {
+      "company": "Outback Winds Pty Ltd",
+      "country": "Australien",
+      "emission": 88.88
+    }
+  ]
+  

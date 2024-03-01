@@ -1,0 +1,76 @@
+/* Animation and Initial State Styles */
+
+/* Initial state for main title and site description with animation setup */
+.mainn-title,
+.site-description {
+  opacity: 0; /* Start with elements invisible */
+  transform: translateY(20px); /* Begin 20px below their final position for animation */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition for opacity and position */
+  animation: fade 1s; /* Apply the 'fade' animation over 1 second */
+}
+
+/* Final state for animated elements, making them visible and positioned correctly */
+.mainn-title.fade-in,
+.site-description.fade-in {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Return to final position */
+}
+
+/* Defines the 'fade' animation keyframes for a smooth in effect */
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Container Styles */
+
+/* Styles for the main content container */
+.container {
+  max-width: 800px; /* Limits the width for optimal reading */
+  margin: 20px auto; /* Centers the container with vertical margins */
+  background-color: #ffffff; /* White background for contrast */
+  padding: 20px; /* Padding inside the container for spacing */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: box-shadow 0.3s ease; /* Smooth transition for the shadow effect */
+}
+
+/* Enhances the container's shadow on hover for interactive feedback */
+.container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Typography Styles */
+
+/* Main title styling for emphasis and visual hierarchy */
+.mainn-title {
+  font-size: 2.5em; /* Large font size for title */
+  border-bottom: 2px solid #007bff; /* Blue bottom border for decorative purpose */
+  padding-bottom: 10px; /* Space between text and border */
+  margin-bottom: 20px; /* Separates the title from content below */
+  color: #007bff; /* Blue color for consistency with the theme */
+}
+
+/* Site description styling for readability and aesthetic */
+.site-description {
+  line-height: 1.6; /* Improved line spacing for readability */
+  color: #555; /* Dark gray color for readability on white background */
+}
+
+/* Strong text emphasis */
+strong {
+  color: #555; /* Dark gray for emphasis while maintaining readability */
+}
+
+/* Custom underline styling without default text decoration */
+u {
+  text-decoration: none; /* Removes the default underline */
+  color: #007bff; /* Blue for visual consistency and emphasis */
+  font-weight: 600; /* Semi-bold for distinction */
+}

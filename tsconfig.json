@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node", /* Uses Node.js-style module resolution. */
+    "target": "esnext", /* Compiles to the latest ECMAScript version for modern JavaScript features. */
+    "module": "esnext", /* Outputs using the latest ECMAScript module system. */
+    "outDir": "./dist", /* Output directory for compiled JavaScript files. */
+
+    /*
+     * Commented out due to causing errors:
+     * "importsNotUsedAsValues": "error",
+     * Instructs TypeScript to enforce using `import type` for types instead of `import` to avoid ambiguity. However, it's commented out because it causes issues in this setup.
+     */
+
+    "verbatimModuleSyntax": true, /* Keeps module syntax similar to the source code in the output. */
+    "isolatedModules": true, /* Each file is transpiled independently for better tool compatibility. */
+    "resolveJsonModule": true, /* Allows JSON modules to be imported directly. */
+    "sourceMap": true, /* Generates source maps for easier debugging. */
+    "esModuleInterop": true, /* Allows for importing CommonJS modules in ES module format. */
+    "skipLibCheck": true, /* Skips type checking of declaration files to speed up compilation. */
+    "forceConsistentCasingInFileNames": true, /* Prevents casing issues in imports on case-sensitive file systems. */
+    "checkJs": true /* Enables type checking in JavaScript files for better error detection. */
+   },
+
+  /*
+   * Use global.d.ts for type declarations without limiting the scope to the ones specified in compilerOptions.types.
+   */
+
+  "include": [
+    "src/**/*.d.ts", 
+    "src/**/*.js", 
+    "src/**/*.svelte"
+    /* Includes TypeScript definitions, JavaScript, and Svelte files in the project for compilation and type checking. */
+  ],
+  
+  "exclude":[
+    /* Optionally, specify files or directories to exclude from the compilation process to improve build performance. */
+  ]
+}

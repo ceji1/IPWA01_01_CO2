@@ -1,0 +1,70 @@
+/* Sets initial states for main title and site description to be invisible and slightly off-position, preparing them for the animation. */
+.mainn-title,
+.site-description {
+  opacity: 0; /* Start invisible to create a fading effect */
+  transform: translateY(20px); /* Positioned 20px down from their final position for a sliding effect */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition for both opacity and position */
+  animation: fade 1s; /* Applies the 'fade' animation defined below */
+}
+
+/* Final states after animation, making elements fully visible and positioned correctly. */
+.mainn-title.fade-in,
+.site-description.fade-in {
+  opacity: 1; /* Elements become fully visible */
+  transform: translateY(0); /* Elements move to their final position */
+}
+
+/* Defines the animation sequence for a fade-in effect, smoothly transitioning elements from invisible and off-position to visible and correctly positioned. */
+@keyframes fade {
+  from {
+    opacity: 0; /* Start invisible and off-position */
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1; /* End fully visible and correctly positioned */
+    transform: translateY(0);
+  }
+}
+
+/* Styles the main content container with a maximum width, centered alignment, white background, padding for spacing, rounded corners for aesthetics, and a subtle shadow for depth. */
+.container {
+  max-width: 800px; /* Ensures content is not too wide for readability */
+  margin: 20px auto; /* Centers the container with vertical spacing */
+  background-color: #ffffff; /* White background for clarity */
+  padding: 20px; /* Inner spacing */
+  border-radius: 8px; /* Softens the edges */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds subtle depth */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition on hover */
+}
+
+/* Enhances the container shadow when hovered over, indicating interactivity and adding visual depth. */
+.container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Main title styling with a significant font size, a bottom border for emphasis, padding to distance text from the border, a bottom margin to separate from following content, and a thematic blue color. */
+.mainn-title {
+  font-size: 2.5em;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+/* Site description styling for readability with a comfortable line height and contrasting color. */
+.site-description {
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Emphasizes strong elements with color to maintain readability and visual consistency. */
+strong {
+  color: #555;
+}
+
+/* Custom underline style without the default text decoration, using color and font weight for emphasis. */
+u {
+  text-decoration: none; /* Removes standard underline */
+  color: #007bff; /* Matches the main title for visual consistency */
+  font-weight: 600; /* Adds emphasis */
+}
