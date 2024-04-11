@@ -1,20 +1,23 @@
-// Defines the initial format for the table store, managing the state of table data and settings.
+// Initial format for storing table data and its settings.
 export const tableStoreFormat = {
-    origData: [],    // Original unsorted and unfiltered data.
-    viewData: [],    // Data to be displayed, after sorting and filtering.
-    sortColumn: null, // Column to sort by, null if no sorting is applied.
-    sortDir: null,    // Direction of sorting: 'asc' for ascending or 'desc' for descending.
-    filterData: {}    // Filters to be applied to the data.
+    origData: [],    // Array containing the original data before any sorting or filtering.
+    viewData: [],    // Array containing data that will be displayed, after applying sorting and/or filtering.
+    sortColumn: null, // Specifies the column name to sort by; null indicates no sorting is applied.
+    sortDir: null,    // Specifies the direction of sorting ('asc' for ascending, 'desc' for descending); null indicates no sorting.
+    filterData: {}    // Object containing filters to be applied to the data.
 };
 
-// Function to sort data based on the specified column and direction.
+/**
+ * Sorts the data in `viewData` based on the specified `sortColumn` and `sortDir`.
+ * Sorting is only performed if both `sortColumn` and `sortDir` are not null.
+ *
+ * @param {Object} data - The data object containing `viewData`, `sortColumn`, and `sortDir`.
+ */
 function sortData(data) {
-    // Ensures sorting is only applied if a column and direction are specified.
     if (data.sortColumn !== null && data.sortDir !== null) {
         let sortColumn = data.sortColumn;
         let sortDir = data.sortDir;
 
-        // Sorts the data in ascending or descending order based on the sortDir.
         if (sortDir === 'asc') {
             data.viewData.sort((a, b) => (a[sortColumn] > b[sortColumn]) ? 1 : -1);
         } else if (sortDir === 'desc') {
@@ -23,30 +26,47 @@ function sortData(data) {
     }
 }
 
-// Filters data based on the criteria specified in filterData.
+/**
+ * Filters the data in `viewData` based on the criteria specified in `filterData`.
+ * Iterates through each property in `filterData` and applies the corresponding filter function.
+ *
+ * @param {Object} data - The data object containing `viewData` and `filterData`.
+ */
 function filterData(data) {
-    // Iterates through each filter and applies it to viewData.
     Object.keys(data.filterData).forEach((prop) => {
         let filterFunction;
 
-        // Skips if no filter criteria is specified.
+        // Skip filtering if no criteria specified for the property.
         if (!data.filterData[prop]) return;
 
-        // Checks if the filter is a range (object with 'from' and 'to').
-        if (typeof data.filterData[prop] === 'object' && (data.filterData[prop].from || data.filterData[prop].to)) {
-            // Defines a function to filter data within the specified range.
-            filterFunction = entry => 
-                (!data.filterData[prop].from || entry[prop] >= data.filterData[prop].from) &&
-                (!data.filterData[prop].to || entry[prop] <= data.filterData[prop].to);
+        // Determine the filter function based on the type of filter criteria.
+        if (typeof data.filterData[prop] === 'object') {
+            if (!data.filterData[prop].from && !data.filterData[prop].to) {
+                return;
+            }
+            filterFunction = function(entry) {
+                if (data.filterData[prop].from && data.filterData[prop].to) {
+                    return entry[prop] >= data.filterData[prop].from && entry[prop] <= data.filterData[prop].to;
+                } else if (data.filterData[prop].from) {
+                    return entry[prop] >= data.filterData[prop].from;
+                } else if (data.filterData[prop].to) {
+                    return entry[prop] <= data.filterData[prop].to;
+                }
+            }
         } else {
-            // Defines a function for simple text filtering.
+            // For simple string filters, check if the property value includes the filter string.
             filterFunction = entry => entry[prop].toLowerCase().includes(data.filterData[prop].toLowerCase());
         }
+        // Apply the filter function to viewData.
         data.viewData = data.viewData.filter(filterFunction);
     });
 }
 
-// Validator function for emission fields, ensuring values are non-negative.
+/**
+ * Validates if the provided value for emission fields is correct.
+ * The field is considered valid if it is empty, null, or a non-negative number.
+ * Returns an object containing a `valid` boolean flag and a `name` string identifying the validator.
+ */
 export function emissionFieldValidator() {
     return value => ({
         valid: value === '' || value === null || value >= 0,
@@ -54,9 +74,14 @@ export function emissionFieldValidator() {
     });
 }
 
-// Function to apply the current table settings to the data, including sorting and filtering.
+/**
+ * Applies the current table settings (sorting and filtering) to `data`.
+ * Initializes `viewData` with a copy of `origData`, then applies sorting and filtering based on current settings.
+ *
+ * @param {Object} data - The data object to apply table settings to.
+ */
 export function applyTableSettings(data) {
-    data.viewData = [...data.origData]; // Resets viewData to the original data.
-    sortData(data); // Applies sorting.
-    filterData(data); // Applies filtering.
+    data.viewData = [...data.origData]; // Start with a fresh copy of the original data.
+    sortData(data); // Apply sorting.
+    filterData(data); // Apply filtering.
 }
