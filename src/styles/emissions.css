@@ -21,7 +21,7 @@ p {
 
 /* Container styles for main content area */
 .container {
-  max-width: 1180px; /* Maximum width for content readability */
+  max-width: 1100px; /* Maximum width for content readability */
   margin: 20px auto; /* Centers the container with vertical margin */
   background-color: #ffffff; /* White background for content emphasis */
   padding: 20px; /* Padding around the content */

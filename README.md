@@ -15,7 +15,7 @@ Follow these steps to set up and run the project locally on your computer:
 
 1. **Clone the Repository**
    Open your preferred CLI and execute the following command to clone the project repository:
-    $ git clone https://github.com/ceji1/IPWA01_v1.git
+    $ git clone [https://github.com/ceji1/IPWA01_v1.git](https://github.com/ceji1/IPWA01_01_CO2.git)
 
 2. **Navigate to the Project Directory**
 After cloning, change into the directory of the cloned project:

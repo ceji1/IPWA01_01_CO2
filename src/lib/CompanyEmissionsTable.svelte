@@ -69,7 +69,7 @@
 
 <div class="table-container">
 <!-- The UI part of the code with embedded svelte logic. -->
-<h2>Nach Firmen <a class="text-muted" href="#collapseCompanyFilter" data-bs-toggle="collapse"><Funnel /></a></h2>
+<h2>Nach Unternehmen <a class="text-muted" href="#collapseCompanyFilter" data-bs-toggle="collapse"><Funnel /></a></h2>
 <div class="collapse" id="collapseCompanyFilter">
   <div class="card card-body">
     <form on:submit|preventDefault={filterTable}>

@@ -23,7 +23,7 @@
 <main class="container">
     <div class="row">
         <!-- Sidebar with navigation links, adapting to RTL settings if necessary -->
-        <div class="col-md-3 col-lg-2">
+        <div class="col-md-4 col-lg-3 col-xl-3">
             <!-- Sticky sidebar for navigation between different sections -->
             <div class="sticky-sidebar sticky-top ms-2">
                 <h4 class="text-muted pb-3">Seiteninhalt</h4>
@@ -38,16 +38,16 @@
                         </li>
                         <li class="nav-item">
                             <!-- Navigation link to the companies section, with directional icon based on layout -->
-                            <a class="nav-link d-flex align-items-center" href="#companies">
+                            <a class="nav-link d-flex align-items-center no-wrap" href="#companies">
                                 {#if rtlLayout}<CaretLeft width={32} height={32} />{:else}<CaretRight width={32} height={32} />{/if}
-                                Nach Firmen
+                                Nach Unternehmen
                             </a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
-        <div class="col-md-9 col-lg-10">
+        <div class="col-md-8 col-lg-9 col-xl-9">
             <!-- Main content area with sections for country and company emissions data -->
             <h1 class="mainn-title fade-in ">CO₂-Emissionen</h1>
             <p class="site-description fade-in">
@@ -64,3 +64,9 @@
 </main>
 
 <Footer />
+
+<style>
+    .no-wrap {
+        white-space: nowrap;
+    }
+</style>

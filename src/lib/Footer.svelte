@@ -9,7 +9,7 @@
         <div class="container-fluid mb-2 footer-container">
             <div class="d-flex flex-row align-items-center log">
                 <img src="{Logo}" width="30" alt="Company Logo">
-                <span class="text-muted ms-2 copy">© 2023 Max Mustermann</span>
+                <span class="text-muted ms-2 copy">© 2025 Max Mustermann</span>
             </div>
             <ul class="navbar-nav mb-lg-0 ms-auto"> <!-- ms-auto moves the content to the right -->
                 <li class="nav-item">
